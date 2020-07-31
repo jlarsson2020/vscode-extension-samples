@@ -1,0 +1,60 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "OfficeExtension_Shortcuts",
+    "title": "Shortcuts",
+    "description": "A file describing the shortcuts for an office extension.",
+    "type": "object",
+    "properties": {
+      "$schema": {
+        "description": "The shortcuts json schema file.",
+        "type": "string"
+      },
+      "shortcuts": {
+        "description": "The shortcuts that are part of this office extension.",
+        "type": "array",
+        "items": {"$ref": "#/definitions/shortcut"}
+      },
+      "resources": {
+        "description": "The resources that are used in this office extension.",
+        "type": "object",
+        "properties": {
+            "default": {
+                "type": "object"
+            }
+        }
+      }
+    },
+    "definitions": {
+        "shortcut": {
+            "title": "Shortcut",
+            "description": "Describes a particular shortcut key.",
+            "type": "object",
+            "required": ["action", "key"],
+            "properties": {
+                "action": {
+                    "title": "Action",
+                    "description": "Describes the action that will be taken when this shortcut key sequence is triggered.",
+                    "type": "string"
+                },
+                "key": {
+                    "title": "Key",
+                    "description": "The key sequence that will trigger this shortcut action.",
+                    "type": "object",
+                    "properties": {
+                        "default": {
+                            "title": "Default Key Sequence",
+                            "description": "The default key sequence that will trigger this shortcut action on all platform",
+                            "type": "string"
+                        },
+                        "web": {
+                            "title": "Web Key Sequence",
+                            "description": "The key sequence that will trigger this shortcut action in the web platform.",
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "required": [ "shortcuts", "resources" ]
+}

@@ -1,0 +1,42 @@
+{
+  "$schema":"./shortcut-schema.json",
+  "shortcuts": [
+    {
+      "action": "ShowTaskpane",
+      "key": {
+        "default": "${resource.showtaskpane_default_key}"
+      }
+    },
+    {
+      "action": "HideTaskpane",
+      "key": {
+        "default": "${resource.closetaskpane_default_key}",
+        "web": "${resource.closetaskpane_web_key}"
+      }
+    }
+  ],
+  "resources": {
+    "default": {
+      "showtaskpane_default_key": {
+        "value": "CTRL+SHIFT+A",
+        "comment": "Short key for showtaskpane"
+      },
+      "closetaskpane_default_key": {
+        "value": "CTRL+SHIFT+B",
+        "comment": "Short key for hidetaskpane"
+      },
+      "closetaskpane_web_key": {
+        "value": "CTRL+SHIFT+DOWN",
+        "comment": "Short key for hidetaskpane in web"
+      },
+      "ShowTaskpaneAction_name": {
+        "value": "Show taskpane",
+        "comment": "Display name for action"
+      },
+      "HideTaskpaneAction_name": {
+        "value": "Hide taskpane",
+        "comment": "Display name for action"
+      }
+    }
+  }
+}
